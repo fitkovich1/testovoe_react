@@ -1,9 +1,9 @@
 import {actorsApi} from "../api/apiActors";
 
-const SET_USERS = 'SET_USERS';
-const DELETE_ACTOR = 'DELETE_ACTOR';
-const ADD_ACTOR = 'ADD_ACTOR';
-const IS_LOADING = 'IS_LOADING';
+const SET_ACTORS = 'actorsList/actors-reducer/SET_USERS';
+const DELETE_ACTOR = 'actorsList/actors-reducer/DELETE_ACTOR';
+const ADD_ACTOR = 'actorsList/actors-reducer/ADD_ACTOR';
+const IS_LOADING = 'actorsList/actors-reducer/IS_LOADING';
 
 let initialState = {
     actors: [],
@@ -11,9 +11,8 @@ let initialState = {
 };
 
 export const actorsReducer = (state = initialState, action) => {
-
     switch (action.type) {
-        case SET_USERS: {
+        case SET_ACTORS: {
             return {
                 ...state,
                 actors: action.actors
@@ -46,9 +45,9 @@ export const actorsReducer = (state = initialState, action) => {
             return state;
     }
 };
-const setUsersToState = (actors) => {
+const setActorsToState = (actors) => {
     return {
-        type: SET_USERS,
+        type: SET_ACTORS,
         actors
     }
 };
@@ -71,10 +70,10 @@ const Loading = () => {
     }
 };
 
-export const getUsersTC = () => async (dispatch) => {
+export const getActorsTC = () => async (dispatch) => {
     dispatch(Loading());
     let response = await actorsApi.getActors();
-    dispatch(setUsersToState(response.data.results));
+    dispatch(setActorsToState(response.data.results));
     dispatch(Loading())
 };
 
