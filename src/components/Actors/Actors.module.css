@@ -1,0 +1,32 @@
+.actorsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.actorsContainer .name{
+    font-size: 35px;
+}
+.actorsContainer button{
+    font-family: "Monserrat", sans-serif;
+    margin: 0 auto;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 0 49px rgba(0, 0, 0, 0.8);
+    color: aquamarine;
+    background-color: #282c34;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid #ffffff;
+    padding: 14px 66px 14px 62px;
+    border-radius: 10px;
+}
+.actorsContainer button:hover{
+    color: #ffffff;
+    background-color: blueviolet;
+    border-radius: 10px;
+}
