@@ -1,32 +1,62 @@
 .actorsContainer{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
     min-height: 100vh;
     background-color: black;
     color: white;
+    padding: 80px 0;
+    box-sizing: border-box;
+}
+.actorItem{
+    margin-bottom: 20px;
+}
+.name{
+    display: flex;
+    font-size: 35px;
+   justify-content: space-between;
+}
+.addName{
+    display: flex;
+    justify-content: space-between;
+    width: 326px;
+    height: 45px
+}
+.addName input{
+    width: 220px;
+    border: 2px solid aquamarine;
+    background-color: #282c34;
+    color: white;
+    padding: 10px;
+    font-size: 14pt;
 }
 
-.actorsContainer .name{
-    font-size: 35px;
-}
-.actorsContainer button{
-    font-family: "Monserrat", sans-serif;
-    margin: 0 auto;
+.addName .addNameBtn{
     font-weight: 800;
     cursor: pointer;
     box-shadow: 0 0 49px rgba(0, 0, 0, 0.8);
     color: aquamarine;
     background-color: #282c34;
-    font-size: 17px;
+    font-size: 28px;
     text-transform: uppercase;
-    letter-spacing: 2px;
     border: 2px solid #ffffff;
-    padding: 14px 66px 14px 62px;
-    border-radius: 10px;
+    padding: 0 13px 0 13px;
+}
+.addName .addNameBtn:disabled{
+    color: rgba(53, 59, 67, 0.84);
+    background-color: lightslategrey;
+}
+.actorsContainer button{
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 0 49px rgba(0, 0, 0, 0.8);
+    color: aquamarine;
+    background-color: #282c34;
+    font-size: 28px;
+    text-transform: uppercase;
+    border: 2px solid #ffffff;
+    padding: 0 13px 0 13px;
 }
 .actorsContainer button:hover{
     color: #ffffff;
     background-color: blueviolet;
-    border-radius: 10px;
 }

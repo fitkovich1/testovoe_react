@@ -19,6 +19,5 @@
 }
 .header a:hover{
     background-color: blueviolet;
-    border-radius: 10px;
     color: white;
 }

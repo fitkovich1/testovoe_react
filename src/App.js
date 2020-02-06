@@ -5,17 +5,13 @@ import Actors from "./components/Actors/Actors.tsx";
 import {Route} from "react-router-dom";
 import Main from "./components/Main/Main";
 
-function App() {
+const App = () => {
     return (
         <div className={styles.appContainer}>
             <Header/>
-            <div>
-                <Route render={() => <Main />} path='/main'/>
-                <Route render={() => <Actors />} path='/actors'/>
-            </div>
-
+            <Route exact render={() => <Main/>} path='/'/>
+            <Route exact render={() => <Actors/>} path='/actors'/>
         </div>
     );
-}
-
+};
 export default App;
