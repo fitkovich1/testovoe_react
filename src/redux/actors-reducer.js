@@ -45,36 +45,36 @@ export const actorsReducer = (state = initialState, action) => {
             return state;
     }
 };
-const setActorsToState = (actors) => {
+const getActorsSuccess = (actors) => {
     return {
         type: SET_ACTORS,
         actors
     }
 };
 
-export const deleteActorAC = (id) => {
+export const deleteActor = (id) => {
     return {
         type: DELETE_ACTOR,
         id
     }
 };
-export const addActorAC = (name) => {
+export const addActor = (name) => {
     return {
         type: ADD_ACTOR,
         name
     }
 };
-const Loading = () => {
+const toggleLoading = () => {
     return {
         type: IS_LOADING
     }
 };
 
-export const getActorsTC = () => async (dispatch) => {
-    dispatch(Loading());
+export const getActors = () => async (dispatch) => {
+    dispatch(toggleLoading());
     let response = await actorsApi.getActors();
-    dispatch(setActorsToState(response.data.results));
-    dispatch(Loading())
+    dispatch(getActorsSuccess(response.data.results));
+    dispatch(toggleLoading())
 };
 
 export default actorsReducer;

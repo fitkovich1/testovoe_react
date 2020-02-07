@@ -5,9 +5,22 @@ import {useActorListLogic} from "./useActorListLogic";
 
 const Actors = () => {
     const {
-        actorsList, onActorNameChange, onAddActorClick,
+        actors, onActorNameChange, onAddActorClick, deleteActorCallback,
         actorName, isLoading
     } = useActorListLogic();
+
+    const actorsList = actors.map((a, index) => {
+        return (
+            <div className={styles.actorItem}>
+                <div className={styles.name}>
+                    {a.name}
+                    <button onClick={() => deleteActorCallback(index)}>X</button>
+                </div>
+                <div>height: {a.height}, mass: {a.mass}, gender: {a.gender}, hair-color: {a.hair_color},
+                    eye-color: {a.eye_color}</div>
+            </div>
+        )
+    });
 
     return (
         <div className={styles.actorsContainer}>
